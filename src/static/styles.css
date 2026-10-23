@@ -16,12 +16,60 @@ body {
 }
 
 header {
+  position: relative;
   text-align: center;
-  padding: 20px 0;
+  padding: 65px 0 20px;
   margin-bottom: 30px;
   background-color: #1a237e;
   color: white;
   border-radius: 5px;
+}
+
+.account-controls {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  z-index: 1;
+}
+
+.account-controls form {
+  width: min(280px, calc(100vw - 64px));
+  padding: 15px;
+  color: #333;
+  text-align: left;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.account-controls form .form-group {
+  margin-bottom: 10px;
+}
+
+.account-controls form input {
+  width: 100%;
+  padding: 8px;
+}
+
+.account-controls #teacher-session {
+  align-items: center;
+  gap: 8px;
+}
+
+.account-controls #teacher-session:not(.hidden) {
+  display: flex;
+}
+
+.account-controls #auth-message {
+  max-width: min(280px, calc(100vw - 64px));
+  padding: 8px;
+  color: #c62828;
+  background-color: white;
+  border-radius: 4px;
 }
 
 header h1 {
@@ -111,18 +159,16 @@ section h3 {
 }
 
 .delete-btn {
-  background: none;
-  border: none;
-  color: #c62828;
+  background-color: #c62828;
   cursor: pointer;
-  font-size: 14px;
-  padding: 2px 5px;
+  font-size: 13px;
+  padding: 5px 8px;
   transition: all 0.2s;
   border-radius: 3px;
 }
 
 .delete-btn:hover {
-  background-color: #ffebee;
+  background-color: #8e0000;
 }
 
 .participants-section p {
@@ -162,6 +208,11 @@ button {
 
 button:hover {
   background-color: #3949ab;
+}
+
+.account-controls button {
+  padding: 8px 12px;
+  font-size: 14px;
 }
 
 .message {
